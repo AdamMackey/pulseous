@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pulseous – support</title>
+  <meta name="description" content="Setup steps and answers for Pulseous, the Safari status monitor for Claude.">
+  <meta name="theme-color" content="#c96442">
+  <link rel="icon" href="icon.png">
+  <link rel="apple-touch-icon" href="icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Pulseous">
+  <meta property="og:title" content="Pulseous – support">
+  <meta property="og:description" content="Setup steps and answers for Pulseous, the Safari status monitor for Claude.">
+  <meta property="og:url" content="https://pulseous.app/support.html">
+  <meta property="og:image" content="https://pulseous.app/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="style.css?v=1">
+</head>
+<body>
+<div class="wrap">
+  <nav class="nav">
+    <a class="brand" href="index.html"><img src="icon.png" width="28" height="28" alt="">Pulseous</a>
+    <div class="links"><a href="index.html">Home</a><a href="support.html" aria-current="page">Support</a><a href="privacy.html">Privacy</a></div>
+  </nav>
+</div>
+<div class="wrap narrow">
+  <header class="page">
+    <img src="icon.png" width="88" height="88" alt="">
+    <h1>Support</h1>
+    <p class="tagline">Setting up Pulseous, and answers to the usual questions.</p>
+  </header>
+
+  <h2>Setting up</h2>
+  <ol class="steps">
+    <li>Open Pulseous once from your Applications folder.</li>
+    <li>In Safari, choose <strong>Settings → Extensions</strong> and tick <strong>Pulseous</strong>.</li>
+    <li>That's it. The pulse sits in Safari's toolbar; click it any time.</li>
+  </ol>
+
+  <h2>Questions</h2>
+
+  <h3>What does the badge mean?</h3>
+  <p><strong>✓</strong> means every Claude service is operational. <strong>✕</strong> means at least one service is degraded, down, or in scheduled maintenance — click the pulse to see which. <strong>?</strong> means Pulseous couldn't reach the status page itself, or its last result is more than twenty minutes old. The badge is always red — that's Safari's colour for every extension badge, not a warning — and if there's no badge at all, the extension isn't running.</p>
+
+  <h3>Why is the icon grey?</h3>
+  <p>Safari draws an extension's toolbar icon in colour only on websites the extension has permission for. Pulseous asks for access to no websites at all, so Safari draws it in the toolbar's own grey everywhere. That's Safari's rule, not a fault, and it's the price of an extension that can't read any page you visit. The badge carries the status.</p>
+
+  <h3>Which services does it cover?</h3>
+  <p>Everything status.claude.com reports: claude.ai, the Claude Console, the Claude API, Claude Code, Claude Cowork and Claude for Government. If Anthropic adds a service to the page, Pulseous picks it up without an update.</p>
+
+  <h3>How fresh is it?</h3>
+  <p>Pulseous checks the status feed every five minutes while Safari is running, and again every time you open the popup or click Refresh. The "Updated" line in the popup says when the last check was. Nothing is checked while Safari is closed.</p>
+
+  <h3>It says the status page can't be reached</h3>
+  <p>Pulseous couldn't fetch <a href="https://status.claude.com">status.claude.com</a>. Usually that's your connection, occasionally it's the status page itself. It keeps showing the last result it got and retries every fifteen minutes; click Refresh to try now.</p>
+
+  <h3>Does it need a Claude account?</h3>
+  <p>No. The status feed is public. Pulseous never signs in to anything and never sees your Claude account.</p>
+
+  <h3>Something's wrong. How do I report it?</h3>
+  <p>Email <a href="mailto:support@pulseous.app?subject=Pulseous">support@pulseous.app</a> with your macOS and Safari versions and what you saw. Pulseous has no logs or identifiers to send; there's nothing in it that identifies you.</p>
+
+  <h3>Is Pulseous made by Anthropic?</h3>
+  <p>No. Pulseous is an independent app and is not affiliated with, endorsed by, or sponsored by Anthropic. Claude is a trademark of Anthropic, PBC.</p>
+</div>
+<div class="wrap">
+  <footer>
+    <div class="row">
+      <span>© 2026 Adam Mackey</span>
+      <span><a href="support.html">Support</a><a href="privacy.html">Privacy</a><a href="mailto:support@pulseous.app?subject=Pulseous">support@pulseous.app</a></span>
+    </div>
+    <p class="legal">Pulseous is an independent app, not affiliated with, endorsed by, or sponsored by Anthropic. Claude is a trademark of Anthropic, PBC.</p>
+  </footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pulseous – privacy policy</title>
+  <meta name="description" content="Pulseous collects no personal data: no website access, no servers, no analytics, nothing leaves your Mac.">
+  <meta name="theme-color" content="#c96442">
+  <link rel="icon" href="icon.png">
+  <link rel="apple-touch-icon" href="icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Pulseous">
+  <meta property="og:title" content="Pulseous – privacy policy">
+  <meta property="og:description" content="Pulseous collects no personal data: no website access, no servers, no analytics, nothing leaves your Mac.">
+  <meta property="og:url" content="https://pulseous.app/privacy.html">
+  <meta property="og:image" content="https://pulseous.app/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="style.css?v=1">
+</head>
+<body>
+<div class="wrap">
+  <nav class="nav">
+    <a class="brand" href="index.html"><img src="icon.png" width="28" height="28" alt="">Pulseous</a>
+    <div class="links"><a href="index.html">Home</a><a href="support.html">Support</a><a href="privacy.html" aria-current="page">Privacy</a></div>
+  </nav>
+</div>
+<div class="wrap narrow">
+  <header class="page">
+    <img src="icon.png" width="88" height="88" alt="">
+    <h1>Privacy policy</h1>
+    <p class="tagline">Pulseous for Safari · effective 16 September 2026</p>
+  </header>
+
+  <p class="note"><strong>The short version:</strong> Pulseous collects no personal data. It has no website access, no servers, no analytics, no accounts and no tracking. Everything it reads stays on your Mac.</p>
+
+  <h2>What Pulseous accesses</h2>
+  <p>Pulseous reads one thing: the public status feed for Claude's services, at <code>https://status.claude.com/api/v2/summary.json</code>. This is the same information shown on status.claude.com, published by Anthropic for anyone to read. Pulseous requests it every five minutes while Safari is running, and when you open the popup. The request carries no login, cookies or identifiers.</p>
+  <p>Pulseous asks Safari for access to no websites. It cannot read, change or observe any page you visit, on any site.</p>
+
+  <h2>What Pulseous stores</h2>
+  <p>Pulseous keeps the most recent status result in Safari's local extension storage on your Mac: the state of each service, any open incidents and maintenance windows, and the time of the last check. If a check fails, it also keeps the error message. Nothing is stored anywhere else. Removing the extension deletes it.</p>
+
+  <h2>Where your data goes</h2>
+  <p>Nowhere. Pulseous sends no information to the developer or to any third party. Its only network request is the read of the public status feed described above. It contains no analytics, crash reporting or advertising code.</p>
+
+  <h2>Third-party services</h2>
+  <p>status.claude.com is operated by Anthropic, PBC, using Atlassian Statuspage. Reading it is subject to their terms. Pulseous is not affiliated with Anthropic or Atlassian.</p>
+
+  <h2>Children</h2>
+  <p>Pulseous is not directed at children under 13 and collects no data from anyone.</p>
+
+  <h2>Changes</h2>
+  <p>If this policy changes, the new version will be published at this address with a new effective date.</p>
+
+  <h2>Contact</h2>
+  <p>Questions about privacy: <a href="mailto:support@pulseous.app?subject=Pulseous%20privacy">support@pulseous.app</a>.</p>
+
+</div>
+<div class="wrap">
+  <footer>
+    <div class="row">
+      <span>© 2026 Adam Mackey</span>
+      <span><a href="support.html">Support</a><a href="privacy.html">Privacy</a><a href="mailto:support@pulseous.app?subject=Pulseous">support@pulseous.app</a></span>
+    </div>
+    <p class="legal">Pulseous is an independent app, not affiliated with, endorsed by, or sponsored by Anthropic. Claude is a trademark of Anthropic, PBC.</p>
+  </footer>
+</div>
+</body>
+</html>
