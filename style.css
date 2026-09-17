@@ -87,6 +87,8 @@ h3 { margin: 24px 0 6px; font-size: 16px; }
 .note { padding: 14px 18px; border-radius: 12px; background: var(--card); border: 1px solid var(--line); }
 kbd { padding: 1px 6px; border: 1px solid var(--line); border-bottom-width: 2px; border-radius: 5px; background: var(--card); font: 13px ui-monospace, Menlo, monospace; }
 
+.coffee { margin-top: 14px; }
+
 /* Footer */
 footer { margin-top: 24px; border-top: 1px solid var(--line); padding: 26px 0 44px; font-size: 14px; color: var(--muted); }
 footer .row { display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; }
