@@ -28,9 +28,9 @@
       <h1>Is Claude down, or is it just you?</h1>
       <p class="lead">Pulseous keeps Claude's service status in Safari's toolbar: a tick while every service is up, a cross the moment one isn't, and the full picture one click away.</p>
       <div class="cta-row">
-        <a class="cta soon" href="#">Coming soon to the Mac App Store</a>
+        <a class="cta" id="watch-demo" href="#demo">▶&#xFE0E;&nbsp; Watch the demo</a>
       </div>
-      <p class="fineprint">macOS 13 or later · No account needed</p>
+      <p class="fineprint">Coming soon to the Mac App Store · macOS 13 or later · No account needed</p>
     </div>
     <div class="hero-shot">
       <picture class="hero-still">
@@ -58,6 +58,15 @@
     </div>
   </section>
 
+  <section class="demo" id="demo">
+    <h2 class="section-title">See it in action</h2>
+    <p class="section-note">Twenty seconds, no sound: the tick in Safari's toolbar, then the popup with every service.</p>
+    <video class="demo-video" controls preload="metadata" playsinline poster="demo-poster.jpg" width="1920" height="1248">
+      <source src="demo.mp4" type="video/mp4">
+      Your browser can't play this video. <a href="demo.mp4">Download it</a> instead.
+    </video>
+  </section>
+
   <section class="howto">
     <div>
       <h2 class="section-title">Set up in a minute</h2>
@@ -80,5 +89,15 @@
     <p class="legal">Pulseous is an independent app, not affiliated with, endorsed by, or sponsored by Anthropic. Claude is a trademark of Anthropic, PBC.</p>
   </footer>
 </div>
+<script>
+  // "Watch the demo": scroll to the player and start it (a click counts as a user gesture).
+  document.getElementById("watch-demo").addEventListener("click", (e) => {
+    const video = document.querySelector(".demo-video");
+    if (!video) return;
+    e.preventDefault();
+    video.scrollIntoView({ behavior: "smooth", block: "center" });
+    video.play().catch(() => {});
+  });
+</script>
 </body>
 </html>
