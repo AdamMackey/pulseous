@@ -58,7 +58,6 @@ a { color: var(--accent); }
 .tb-mark { fill: none; stroke: #fff; stroke-width: 2.7; stroke-linecap: round; stroke-linejoin: round; }
 .state figcaption { font-size: 15px; color: var(--muted); }
 .state figcaption strong { display: block; margin-bottom: 3px; font-size: 17px; color: var(--text); }
-.states-note { grid-column: 1 / -1; margin: 0; font-size: 14px; color: var(--muted); text-align: center; }
 
 /* Home: features and steps */
 .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; padding-bottom: 72px; }
