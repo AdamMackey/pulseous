@@ -15,7 +15,7 @@
   <meta property="og:url" content="https://pulseous.app/">
   <meta property="og:image" content="https://pulseous.app/og.png">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="stylesheet" href="style.css?v=1">
+  <link rel="stylesheet" href="style.css?v=2">
 </head>
 <body>
 <div class="wrap">
@@ -38,6 +38,28 @@
         <img src="popup-light.png" width="340" height="519" alt="The Pulseous popup: an open incident and the status of every Claude service">
       </picture>
     </div>
+  </section>
+
+  <section class="states" aria-label="What the toolbar badge shows">
+    <figure class="state">
+      <svg viewBox="0 0 120 84" role="img" aria-label="The Pulseous toolbar icon with a checkmark badge">
+        <rect class="tb-bg" x="6" y="16" width="108" height="58" rx="29"/>
+        <path class="tb-glyph" d="M38 45H50.3L56.5 34 63.5 56 68.8 45H82"/>
+        <circle cx="86" cy="25" r="13" fill="#ff3b30"/>
+        <path class="tb-mark" d="M80 25.5l4.4 4.4 7.8-9.2"/>
+      </svg>
+      <figcaption><strong>Checkmark</strong>Every Claude service is operational.</figcaption>
+    </figure>
+    <figure class="state">
+      <svg viewBox="0 0 120 84" role="img" aria-label="The Pulseous toolbar icon with an X badge">
+        <rect class="tb-bg" x="6" y="16" width="108" height="58" rx="29"/>
+        <path class="tb-glyph" d="M38 45H50.3L56.5 34 63.5 56 68.8 45H82"/>
+        <circle cx="86" cy="25" r="13" fill="#ff3b30"/>
+        <path class="tb-mark" d="M81 20l10 10M91 20l-10 10"/>
+      </svg>
+      <figcaption><strong>X</strong>Something is degraded, down or in maintenance. Click for the detail.</figcaption>
+    </figure>
+    <p class="states-note">Safari paints every extension badge red, so the symbol is what carries the meaning.</p>
   </section>
 
   <section class="features">

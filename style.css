@@ -6,9 +6,11 @@
   --muted: #6f6b62;
   --line: #e3dfd4;
   --accent: #c96442;
+  --tb-bg: #e9e7e1;
+  --tb-glyph: #55524b;
 }
 @media (prefers-color-scheme: dark) {
-  :root { --bg: #262624; --card: #2f2e2b; --text: #f0eee6; --muted: #a6a39a; --line: #3f3d39; --accent: #d97757; }
+  :root { --bg: #262624; --card: #2f2e2b; --text: #f0eee6; --muted: #a6a39a; --line: #3f3d39; --accent: #d97757; --tb-bg: #171716; --tb-glyph: #d0cec8; }
 }
 * { box-sizing: border-box; }
 body {
@@ -46,6 +48,17 @@ a { color: var(--accent); }
   .hero-video { display: none; }
   .hero-still { display: block; }
 }
+
+/* Home: the two toolbar states */
+.states { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; padding-bottom: 56px; }
+.state { display: flex; align-items: center; gap: 22px; margin: 0; padding: 20px 24px; border-radius: 14px; background: var(--card); border: 1px solid var(--line); }
+.state svg { flex: none; width: 132px; height: auto; }
+.tb-bg { fill: var(--tb-bg); }
+.tb-glyph { fill: none; stroke: var(--tb-glyph); stroke-width: 5.2; stroke-linecap: round; stroke-linejoin: round; }
+.tb-mark { fill: none; stroke: #fff; stroke-width: 2.7; stroke-linecap: round; stroke-linejoin: round; }
+.state figcaption { font-size: 15px; color: var(--muted); }
+.state figcaption strong { display: block; margin-bottom: 3px; font-size: 17px; color: var(--text); }
+.states-note { grid-column: 1 / -1; margin: 0; font-size: 14px; color: var(--muted); text-align: center; }
 
 /* Home: features and steps */
 .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; padding-bottom: 72px; }
@@ -85,5 +98,5 @@ footer .legal { margin: 10px 0 0; font-size: 13px; }
 @media (max-width: 760px) {
   .hero { grid-template-columns: 1fr; gap: 32px; padding: 24px 0 48px; }
   .hero h1 { font-size: 36px; }
-  .features, .howto { grid-template-columns: 1fr; }
+  .features, .howto, .states { grid-template-columns: 1fr; }
 }
