@@ -36,6 +36,9 @@ a { color: var(--accent); }
 .lead { margin: 0 0 26px; font-size: 19px; color: var(--muted); }
 .cta { display: inline-block; padding: 12px 20px; border-radius: 10px; background: var(--accent); color: #fff; text-decoration: none; font-weight: 600; }
 .cta:hover { filter: brightness(1.06); }
+/* A store link beside the primary button: present, but second to it. */
+.cta.store { background: var(--card); color: var(--text); border: 1px solid var(--line); }
+.cta.store:hover { filter: none; border-color: var(--accent); }
 .cta.soon { background: var(--card); color: var(--muted); border: 1px solid var(--line); font-weight: 500; }
 .cta-row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
 .fineprint { margin: 14px 0 0; font-size: 14px; color: var(--muted); }
