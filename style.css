@@ -36,8 +36,10 @@ a { color: var(--accent); }
 .lead { margin: 0 0 26px; font-size: 19px; color: var(--muted); }
 .cta { display: inline-block; padding: 12px 20px; border-radius: 10px; background: var(--accent); color: #fff; text-decoration: none; font-weight: 600; }
 .cta:hover { filter: brightness(1.06); }
-/* A store link beside the primary button: present, but second to it. */
-.cta.store { background: var(--card); color: var(--text); border: 1px solid var(--line); }
+/* A store link beside the primary button: present, but second to it. The browser
+   marks are the vendors' own monochrome logos, tinted to the button's text. */
+.cta.store { display: inline-flex; align-items: center; gap: 9px; background: var(--card); color: var(--text); border: 1px solid var(--line); }
+.cta.store .mark { flex: none; width: 17px; height: 17px; fill: currentColor; }
 .cta.store:hover { filter: none; border-color: var(--accent); }
 .cta.soon { background: var(--card); color: var(--muted); border: 1px solid var(--line); font-weight: 500; }
 .cta-row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
