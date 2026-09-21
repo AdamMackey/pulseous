@@ -22,6 +22,11 @@ body {
   color: var(--text);
   font: 16px/1.55 -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
+/* The hero glow reaches past the screenshot, and on a phone that is past the edge of the
+   screen: the page scrolled sideways, and Chrome on Android zoomed out to fit it. Clip it
+   at the edge. It has to be on both elements: set on body alone, the value is handed up
+   to the viewport and body itself goes back to visible, so nothing is clipped. */
+html, body { overflow-x: hidden; overflow-x: clip; }
 a { color: var(--accent); }
 .wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
 .narrow { max-width: 720px; }
@@ -46,6 +51,20 @@ a { color: var(--accent); }
 .cta.soon { background: var(--card); color: var(--muted); border: 1px solid var(--line); font-weight: 500; }
 .cta-row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
 .fineprint { margin: 14px 0 0; font-size: 14px; color: var(--muted); }
+/* Store badges. Apple's badge is Apple's own artwork, shown exactly as supplied: its
+   marketing guidelines ask for the black one whenever other stores' badges sit beside
+   it, first in the row, never modified or animated (so: no hover effect), at least 40px
+   tall, with clear space of a quarter of its height. The browser badges are ours, drawn
+   to match it. Their glyph and type are sized in cqw, relative to the badge, so they
+   shrink in step with Apple's artwork when the grid narrows on a phone; the px values
+   are for browsers without container units. */
+.badges { display: grid; grid-template-columns: repeat(2, minmax(0, 180px)); gap: 14px; }
+.store-badge { display: block; border-radius: 5% / 19.5%; color: #fff; text-decoration: none; }
+.store-badge img { display: block; width: 100%; height: auto; }
+.store-badge.browser { container-type: inline-size; display: flex; align-items: center; gap: 3.6%; aspect-ratio: 156.1 / 40; padding-left: 5.9%; border: 1px solid #a6a6a6; background: #000; }
+.store-badge.browser svg { display: block; flex: none; width: 24px; height: 24px; width: 13.4cqw; height: 13.4cqw; }
+.store-badge.browser span { display: block; font-size: 19.5px; font-size: 10.8cqw; font-weight: 450; line-height: 1; letter-spacing: -0.015em; white-space: nowrap; }
+.store-badge.browser small { display: block; margin-bottom: 2px; margin-bottom: 0.9cqw; font-size: 10px; font-size: 5.7cqw; font-weight: 400; letter-spacing: 0.01em; }
 /* A soft clay glow gives the popup some depth without adding anything to look at. */
 .hero-shot { position: relative; margin: 0; justify-self: center; }
 .hero-shot::before { content: ""; position: absolute; inset: -70px -90px; z-index: 0; pointer-events: none; background: radial-gradient(closest-side, color-mix(in srgb, var(--accent) 17%, transparent), transparent); }
@@ -97,6 +116,11 @@ footer .legal { margin: 10px 0 0; font-size: 13px; }
   .hero h1 { font-size: 36px; }
   .features, .howto { grid-template-columns: 1fr; }
 }
+
+/* Narrower than this, two badges side by side would take Apple's below its 40px minimum. */
+@media (max-width: 374px) {
+  .badges { grid-template-columns: minmax(0, 180px); }
+}
 /* ==== END SHARED ==== */
 
 /* ==== Pulseous only ==== */
@@ -116,10 +140,6 @@ footer .legal { margin: 10px 0 0; font-size: 13px; }
 .tb-mark { fill: none; stroke: #fff; stroke-width: 2.7; stroke-linecap: round; stroke-linejoin: round; }
 .state figcaption { font-size: 15px; color: var(--muted); }
 .state figcaption strong { display: block; margin-bottom: 3px; font-size: 17px; color: var(--text); }
-
-/* Apple's badge, shown as supplied and sized to sit level with the store buttons. */
-.store-badge { display: inline-flex; }
-.store-badge img { display: block; height: 46px; width: auto; }
 
 @media (max-width: 760px) {
   .states { grid-template-columns: 1fr; }
