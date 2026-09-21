@@ -57,16 +57,16 @@ a { color: var(--accent); }
    tall, with clear space of a quarter of its height. The browser badges are ours, drawn
    to match it. Their glyph and type are sized in cqw, relative to the badge, so they
    shrink in step with Apple's artwork when the grid narrows on a phone; the px values
-   are for browsers without container units. The logo sits at the left edge, where
-   Apple's does, and both lines are centred in the space to its right: the browser
-   names are much shorter than "Mac App Store", and left-aligned they left the right
-   third of each badge empty. */
+   are for browsers without container units. The logo sits at the left inset Apple's
+   logo uses and the text follows it, left-aligned, the way Apple's badge is laid out.
+   Centring the text was tried twice (logo and text centred together, then text centred
+   beside a left logo) and both looked off next to Apple's badge. */
 .badges { display: grid; grid-template-columns: repeat(2, minmax(0, 180px)); gap: 14px; }
 .store-badge { display: block; border-radius: 5% / 19.5%; color: #fff; text-decoration: none; }
 .store-badge img { display: block; width: 100%; height: auto; }
 .store-badge.browser { container-type: inline-size; display: flex; align-items: center; gap: 3.6%; aspect-ratio: 156.1 / 40; padding: 0 5.9%; border: 1px solid #a6a6a6; background: #000; }
 .store-badge.browser svg { display: block; flex: none; width: 24px; height: 24px; width: 13.4cqw; height: 13.4cqw; }
-.store-badge.browser span { display: block; flex: 1; text-align: center; font-size: 19.5px; font-size: 10.8cqw; font-weight: 450; line-height: 1; letter-spacing: -0.015em; white-space: nowrap; }
+.store-badge.browser span { display: block; font-size: 19.5px; font-size: 10.8cqw; font-weight: 450; line-height: 1; letter-spacing: -0.015em; white-space: nowrap; }
 .store-badge.browser small { display: block; margin-bottom: 2px; margin-bottom: 0.9cqw; font-size: 10px; font-size: 5.7cqw; font-weight: 400; letter-spacing: 0.01em; }
 /* A soft clay glow gives the popup some depth without adding anything to look at. */
 .hero-shot { position: relative; margin: 0; justify-self: center; }
