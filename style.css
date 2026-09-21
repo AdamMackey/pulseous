@@ -1,3 +1,8 @@
+/* ==== BEGIN SHARED — generated from ~/SiteStyle/base.css by ~/SiteStyle/sync.py. Edit it there, not here. ==== */
+/* Shared stylesheet for meterous.app and pulseous.app.
+   This file is the source of truth. ~/SiteStyle/sync.py copies it, verbatim, into
+   the marked block at the top of each site's style.css; each site's own components
+   follow that block. Edit here, then run sync.py — never edit the copies. */
 :root {
   color-scheme: light dark;
   --bg: #faf9f5;
@@ -6,11 +11,9 @@
   --muted: #6f6b62;
   --line: #e3dfd4;
   --accent: #c96442;
-  --tb-bg: #e9e7e1;
-  --tb-glyph: #55524b;
 }
 @media (prefers-color-scheme: dark) {
-  :root { --bg: #262624; --card: #2f2e2b; --text: #f0eee6; --muted: #a6a39a; --line: #3f3d39; --accent: #d97757; --tb-bg: #171716; --tb-glyph: #d0cec8; }
+  :root { --bg: #262624; --card: #2f2e2b; --text: #f0eee6; --muted: #a6a39a; --line: #3f3d39; --accent: #d97757; }
 }
 * { box-sizing: border-box; }
 body {
@@ -31,41 +34,26 @@ a { color: var(--accent); }
 .nav .links a:hover, .nav .links a[aria-current] { color: var(--text); }
 
 /* Home: hero */
-.hero { display: grid; grid-template-columns: 1.1fr 1fr; gap: 48px; align-items: center; padding: 56px 0 72px; }
-.hero h1 { margin: 0 0 14px; font-size: 48px; line-height: 1.1; letter-spacing: -0.02em; }
-.lead { margin: 0 0 26px; font-size: 19px; color: var(--muted); }
+.hero { display: grid; grid-template-columns: 1.1fr 1fr; gap: 48px; align-items: center; padding: 56px 0 64px; }
+.hero h1 { margin: 0 0 16px; font-size: 56px; line-height: 1.06; letter-spacing: -0.025em; text-wrap: balance; }
+.lead { margin: 0 0 28px; font-size: 20px; color: var(--muted); }
 .cta { display: inline-flex; align-items: center; gap: 9px; padding: 12px 20px; border-radius: 10px; background: var(--accent); color: #fff; text-decoration: none; font-weight: 600; }
 .cta svg { display: block; flex: none; }
 .demo-link { margin: 16px 0 0; }
 .demo-link a { color: var(--text); font-weight: 600; text-decoration: none; }
 .demo-link a:hover { color: var(--accent); }
 .cta:hover { filter: brightness(1.06); }
-.cta.store:hover { filter: none; border-color: var(--accent); }
 .cta.soon { background: var(--card); color: var(--muted); border: 1px solid var(--line); font-weight: 500; }
 .cta-row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
 .fineprint { margin: 14px 0 0; font-size: 14px; color: var(--muted); }
-.hero-shot { margin: 0; justify-self: center; text-align: center; }
-.hero-shot img, .hero-video { display: block; margin: 0 auto; max-width: 100%; height: auto; border-radius: 14px; border: 1px solid var(--line); box-shadow: 0 30px 60px -24px rgba(0, 0, 0, 0.45); }
-.hero-shot img { width: 300px; }
-.hero-video { width: 440px; background: #1c1c1c; }
-.hero-still { display: none; }
-@media (prefers-reduced-motion: reduce) {
-  .hero-video { display: none; }
-  .hero-still { display: block; }
-}
-
-/* Home: the two toolbar states */
-.states { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; padding-bottom: 56px; }
-.state { display: flex; align-items: center; gap: 22px; margin: 0; padding: 20px 24px; border-radius: 14px; background: var(--card); border: 1px solid var(--line); }
-.state svg { flex: none; width: 132px; height: auto; }
-.tb-bg { fill: var(--tb-bg); }
-.tb-glyph { fill: none; stroke: var(--tb-glyph); stroke-width: 5.2; stroke-linecap: round; stroke-linejoin: round; }
-.tb-mark { fill: none; stroke: #fff; stroke-width: 2.7; stroke-linecap: round; stroke-linejoin: round; }
-.state figcaption { font-size: 15px; color: var(--muted); }
-.state figcaption strong { display: block; margin-bottom: 3px; font-size: 17px; color: var(--text); }
+/* A soft clay glow gives the popup some depth without adding anything to look at. */
+.hero-shot { position: relative; margin: 0; justify-self: center; }
+.hero-shot::before { content: ""; position: absolute; inset: -70px -90px; z-index: 0; pointer-events: none; background: radial-gradient(closest-side, color-mix(in srgb, var(--accent) 17%, transparent), transparent); }
+.hero-shot picture { position: relative; z-index: 1; display: block; }
+.hero-shot img { display: block; width: 340px; max-width: 100%; height: auto; border-radius: 14px; border: 1px solid var(--line); box-shadow: 0 30px 60px -24px rgba(0, 0, 0, 0.45); }
 
 /* Home: features and steps */
-.features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; padding-bottom: 72px; }
+.features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; padding-bottom: 20px; }
 .feature { padding: 22px; border-radius: 14px; background: var(--card); border: 1px solid var(--line); }
 .feature svg { display: block; width: 32px; height: 32px; margin-bottom: 14px; color: var(--accent); }
 .feature h3 { margin: 0 0 6px; font-size: 17px; }
@@ -73,6 +61,7 @@ a { color: var(--accent); }
 .howto { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; padding-bottom: 80px; }
 .section-title { margin: 0 0 14px; font-size: 26px; letter-spacing: -0.01em; }
 .section-note { margin: 0; color: var(--muted); }
+.coffee { margin-top: 14px; }
 ol.steps { margin: 0; padding-left: 22px; }
 ol.steps li { margin: 10px 0; }
 ol.steps li::marker { color: var(--accent); font-weight: 600; }
@@ -92,8 +81,6 @@ h3 { margin: 24px 0 6px; font-size: 16px; }
 .note { padding: 14px 18px; border-radius: 12px; background: var(--card); border: 1px solid var(--line); }
 kbd { padding: 1px 6px; border: 1px solid var(--line); border-bottom-width: 2px; border-radius: 5px; background: var(--card); font: 13px ui-monospace, Menlo, monospace; }
 
-.coffee { margin-top: 14px; }
-
 /* Footer */
 footer { margin-top: 24px; border-top: 1px solid var(--line); padding: 26px 0 44px; font-size: 14px; color: var(--muted); }
 footer .row { display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; }
@@ -101,8 +88,35 @@ footer a { color: var(--muted); text-decoration: none; margin-right: 18px; }
 footer a:hover { color: var(--text); }
 footer .legal { margin: 10px 0 0; font-size: 13px; }
 
+@media (max-width: 980px) {
+  .hero { grid-template-columns: 1fr; gap: 36px; padding: 32px 0 56px; }
+}
+
 @media (max-width: 760px) {
   .hero { grid-template-columns: 1fr; gap: 32px; padding: 24px 0 48px; }
   .hero h1 { font-size: 36px; }
-  .features, .howto, .states { grid-template-columns: 1fr; }
+  .features, .howto { grid-template-columns: 1fr; }
+}
+/* ==== END SHARED ==== */
+
+/* ==== Pulseous only ==== */
+
+/* Tokens for the toolbar pictures in the two badge-state cards. */
+:root { --tb-bg: #e9e7e1; --tb-glyph: #55524b; }
+@media (prefers-color-scheme: dark) {
+  :root { --tb-bg: #171716; --tb-glyph: #d0cec8; }
+}
+
+/* Home: the two toolbar states */
+.states { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; padding-bottom: 56px; }
+.state { display: flex; align-items: center; gap: 22px; margin: 0; padding: 20px 24px; border-radius: 14px; background: var(--card); border: 1px solid var(--line); }
+.state svg { flex: none; width: 132px; height: auto; }
+.tb-bg { fill: var(--tb-bg); }
+.tb-glyph { fill: none; stroke: var(--tb-glyph); stroke-width: 5.2; stroke-linecap: round; stroke-linejoin: round; }
+.tb-mark { fill: none; stroke: #fff; stroke-width: 2.7; stroke-linecap: round; stroke-linejoin: round; }
+.state figcaption { font-size: 15px; color: var(--muted); }
+.state figcaption strong { display: block; margin-bottom: 3px; font-size: 17px; color: var(--text); }
+
+@media (max-width: 760px) {
+  .states { grid-template-columns: 1fr; }
 }
