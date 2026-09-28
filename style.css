@@ -41,6 +41,9 @@ a { color: var(--accent); }
 /* The nav's clay reaches 1px under it, so where it meets the hero mid-pixel the page
    behind can't show through as a dark hairline. The hero paints over the overlap. */
 .nav { clip-path: inset(0 -100vmax -1px); }
+/* The band paints the hero's padding too, so the space between the band and the first
+   cards has to be a margin: 56px, the gap Pulseous already leaves between its two rows of cards. */
+.hero { margin-bottom: 56px; }
 
 /* Navigation */
 .nav { display: flex; align-items: center; justify-content: space-between; padding: 20px 0; }
