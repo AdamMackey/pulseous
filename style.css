@@ -38,14 +38,20 @@ a { color: var(--accent); }
    background, stretched to the window's edges by a spread shadow and clipped back to
    their height, so the markup stays as it is. Support and Privacy get just the nav. */
 .nav, .hero { background: var(--band); box-shadow: 0 0 0 100vmax var(--band); clip-path: inset(0 -100vmax); }
+/* The nav's clay reaches 1px under it, so where it meets the hero mid-pixel the page
+   behind can't show through as a dark hairline. The hero paints over the overlap. */
+.nav { clip-path: inset(0 -100vmax -1px); }
 
 /* Navigation */
 .nav { display: flex; align-items: center; justify-content: space-between; padding: 20px 0; }
 .brand { display: flex; align-items: center; gap: 10px; color: var(--on-band); text-decoration: none; font-weight: 600; font-size: 17px; }
 /* A white ring, so the clay tile doesn't vanish into the clay band. */
 .brand img { width: 28px; height: 28px; border-radius: 7px; box-shadow: 0 0 0 2px var(--on-band); }
-.nav .links a { margin-left: 22px; color: var(--on-band); opacity: 0.85; text-decoration: none; font-size: 15px; }
-.nav .links a:hover, .nav .links a[aria-current] { opacity: 1; }
+/* Full white: dimming them dropped them to about 2.7:1 on the clay. The current page is
+   marked by weight instead. */
+.nav .links a { margin-left: 22px; color: var(--on-band); text-decoration: none; font-size: 15px; }
+.nav .links a[aria-current] { font-weight: 600; }
+.nav .links a:hover { text-decoration: underline; text-underline-offset: 4px; }
 
 /* Home: hero */
 .hero { display: grid; grid-template-columns: 1.1fr 1fr; gap: 48px; align-items: center; padding: 56px 0 64px; }
@@ -62,7 +68,7 @@ a { color: var(--accent); }
 .fineprint { margin: 14px 0 0; font-size: 14px; color: var(--muted); }
 /* On the band. White on clay is 3.1:1, so the lead gets a little more weight. */
 .hero .lead { color: var(--on-band); font-weight: 500; }
-.hero .fineprint { color: var(--on-band); opacity: 0.88; }
+.hero .fineprint { color: var(--on-band); }
 .hero .demo-link a, .hero .demo-link a:hover { color: var(--on-band); }
 .hero .demo-link a:hover { text-decoration: underline; }
 /* Store badges. Apple's badge is Apple's own artwork, shown exactly as supplied: its
@@ -132,6 +138,13 @@ footer .legal { margin: 10px 0 0; font-size: 13px; }
   .hero { grid-template-columns: 1fr; gap: 32px; padding: 24px 0 48px; }
   .hero h1 { font-size: 36px; }
   .features, .howto { grid-template-columns: 1fr; }
+}
+
+/* Narrower than 360px the nav doesn't fit on one line, and the overflow clip cut off its last
+   link ("Privacy" at 320px). Let the links drop to a second line instead. */
+@media (max-width: 359px) {
+  .nav { flex-wrap: wrap; row-gap: 6px; }
+  .nav .links a:first-child { margin-left: 0; }
 }
 
 /* Narrower than this, two badges side by side would take Apple's below its 40px minimum. */
