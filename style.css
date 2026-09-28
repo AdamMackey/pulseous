@@ -13,9 +13,12 @@
   --accent: #c96442;
   --band: #d97757;   /* the apps' clay: their icons' colour, and MackEye's --clay */
   --on-band: #fff;
+  --tb-bg: #e9e7e1;  /* the toolbar pictures in the state cards: button and glyph */
+  --tb-glyph: #55524b;
 }
 @media (prefers-color-scheme: dark) {
-  :root { --bg: #262624; --card: #2f2e2b; --text: #f0eee6; --muted: #a6a39a; --line: #3f3d39; --accent: #d97757; }
+  :root { --bg: #262624; --card: #2f2e2b; --text: #f0eee6; --muted: #a6a39a; --line: #3f3d39; --accent: #d97757;
+          --tb-bg: #171716; --tb-glyph: #d0cec8; }
 }
 * { box-sizing: border-box; }
 body {
@@ -97,6 +100,15 @@ a { color: var(--accent); }
 .hero-shot picture { display: block; }
 .hero-shot img { display: block; width: 340px; max-width: 100%; height: auto; border-radius: 14px; box-shadow: 0 30px 60px -20px rgba(31, 30, 27, 0.5); }
 
+/* Home: two cards under the band, each a picture of the toolbar icon and what it's saying.
+   Each site draws its own icon inside; .tb-bg is the toolbar button behind it. */
+.states { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; padding-bottom: 56px; }
+.state { display: flex; align-items: center; gap: 22px; margin: 0; padding: 20px 24px; border-radius: 14px; background: var(--card); border: 1px solid var(--line); }
+.state svg { flex: none; width: 132px; height: auto; }
+.tb-bg { fill: var(--tb-bg); }
+.state figcaption { font-size: 15px; color: var(--muted); }
+.state figcaption strong { display: block; margin-bottom: 3px; font-size: 17px; color: var(--text); }
+
 /* Home: features and steps */
 .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; padding-bottom: 20px; }
 .feature { padding: 22px; border-radius: 14px; background: var(--card); border: 1px solid var(--line); }
@@ -140,7 +152,7 @@ footer .legal { margin: 10px 0 0; font-size: 13px; }
 @media (max-width: 760px) {
   .hero { grid-template-columns: 1fr; gap: 32px; padding: 24px 0 48px; }
   .hero h1 { font-size: 36px; }
-  .features, .howto { grid-template-columns: 1fr; }
+  .states, .features, .howto { grid-template-columns: 1fr; }
 }
 
 /* Narrower than 360px the nav doesn't fit on one line, and the overflow clip cut off its last
@@ -158,22 +170,7 @@ footer .legal { margin: 10px 0 0; font-size: 13px; }
 
 /* ==== Pulseous only ==== */
 
-/* Tokens for the toolbar pictures in the two badge-state cards. */
-:root { --tb-bg: #e9e7e1; --tb-glyph: #55524b; }
-@media (prefers-color-scheme: dark) {
-  :root { --tb-bg: #171716; --tb-glyph: #d0cec8; }
-}
-
-/* Home: the two toolbar states */
-.states { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; padding-bottom: 56px; }
-.state { display: flex; align-items: center; gap: 22px; margin: 0; padding: 20px 24px; border-radius: 14px; background: var(--card); border: 1px solid var(--line); }
-.state svg { flex: none; width: 132px; height: auto; }
-.tb-bg { fill: var(--tb-bg); }
+/* Its pictures in the two state cards (the cards themselves are shared): the pulse, and the
+   mark on the badge. */
 .tb-glyph { fill: none; stroke: var(--tb-glyph); stroke-width: 5.2; stroke-linecap: round; stroke-linejoin: round; }
 .tb-mark { fill: none; stroke: #fff; stroke-width: 2.7; stroke-linecap: round; stroke-linejoin: round; }
-.state figcaption { font-size: 15px; color: var(--muted); }
-.state figcaption strong { display: block; margin-bottom: 3px; font-size: 17px; color: var(--text); }
-
-@media (max-width: 760px) {
-  .states { grid-template-columns: 1fr; }
-}
